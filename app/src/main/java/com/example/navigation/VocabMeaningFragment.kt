@@ -13,7 +13,6 @@ import com.example.navigation.databinding.FragmentVocabMeaningBinding
 class VocabMeaningFragment : Fragment() {
     private var _binding: FragmentVocabMeaningBinding? = null
     private val binding get() = _binding!!
-    lateinit var recyclerView: RecyclerView
     private lateinit var wordId: String
     private lateinit var wordImageResource: String
     private lateinit var wordSoundResource: String
@@ -22,10 +21,6 @@ class VocabMeaningFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-//        arguments?.let {
-//            param1 = it.getString(ARG_PARAM1)
-//            param2 = it.getString(ARG_PARAM2)
-//        }
     }
 
     override fun onCreateView(
@@ -43,7 +38,7 @@ class VocabMeaningFragment : Fragment() {
             wordImageResource = it.getString(IMAGERESOURCE).toString()
             wordSoundResource = it.getString(SOUNDRESOURCE).toString()
         }
-        binding.text.setText(wordId) ///////////////////////////////////////////////
+        binding.text.setText(wordId)
         binding.vocabImage.setImageResource(wordImageResource.toInt())
         binding.vocabSound.setOnClickListener{
             val clickSound = MediaPlayer.create(context, wordSoundResource.toInt())

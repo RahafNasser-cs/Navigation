@@ -12,7 +12,5 @@
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:navGraph="@navigation/nav_graph"/>
-
-
 </FrameLayout>
 

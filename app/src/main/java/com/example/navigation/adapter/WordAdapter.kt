@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.navigation.R
 import com.example.navigation.VocabFragmentDirections
 import com.example.navigation.model.Vocabulary
-import javax.sql.DataSource
 
 class WordAdapter(): RecyclerView.Adapter<WordAdapter.ItemViewHolder>() {
 
@@ -34,7 +33,8 @@ class WordAdapter(): RecyclerView.Adapter<WordAdapter.ItemViewHolder>() {
         holder.imageView.setImageResource(item.wordImageResource)
         holder.vocab.setText(item.word)
         holder.vocabCard.setOnClickListener{
-            val action = VocabFragmentDirections.actionVocabFragmentToVocabMeaningFragment(item.word, item.wordImageResource.toString(),item.wordSoundResource.toString())
+            val action = VocabFragmentDirections.actionVocabFragmentToVocabMeaningFragment(item.word,
+                item.wordImageResource.toString(),item.wordSoundResource.toString())
             holder.view.findNavController().navigate(action)
         }
 
