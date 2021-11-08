@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vocabFragment">
+
+    <fragment
+        android:id="@+id/vocabFragment"
+        android:name="com.example.navigation.VocabFragment"
+        android:label="Vocabulary"
+        tools:layout="@layout/fragment_vocab">
+        <action
+            android:id="@+id/action_vocabFragment_to_vocabMeaningFragment"
+            app:destination="@id/vocabMeaningFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vocabMeaningFragment"
+        android:name="com.example.navigation.VocabMeaningFragment"
+        android:label="Vocab meaning"
+        tools:layout="@layout/fragment_vocab_meaning">
+        <argument
+            android:name="word"
+            app:argType="string" />
+        <argument
+            android:name="imageResource"
+            app:argType="string" />
+        <argument
+            android:name="soundResource"
+            app:argType="string" />
+    </fragment>
+</navigation>
